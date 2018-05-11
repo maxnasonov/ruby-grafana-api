@@ -29,7 +29,8 @@ module Grafana
 
     def create_dashboard(properties={})
       endpoint = "/api/dashboards/db"
-      dashboard = self.build_template(properties)
+      #dashboard = self.build_template(properties)
+      dashboard = properties
       @logger.info("Creating dashboard: #{properties['title']} (POST /api/dashboards/db)") if @debug
       return post_request(endpoint, dashboard)
     end
